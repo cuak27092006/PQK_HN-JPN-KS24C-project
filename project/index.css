@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+  }
+  .nav {
+    background-color: #1f2937;
+    height: 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 72px;
+    padding-right: 72px;
+  }
+  .nav a {
+    text-decoration: none;
+    color: white;
+  }
+  .nav h2 {
+    color: white;
+    font-size: 23.9px;
+    margin-top: 23px;
+  }
+  .nav a:hover {
+    cursor: pointer;
+  }
+  .nav .links {
+    display: flex;
+    font-size: 18.6px;
+    gap: 16px;
+  }
+  .welcome {
+    position: relative;
+    background-image: url(./png/anh1.png);
+    height: 745.9px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .welcome::before {
+    /*phủ một lớp màu*/
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .welcome .text {
+    position: relative;
+    text-align: center;
+    color: white;
+    z-index: 1; /* Đảm bảo nội dung hiển thị trên lớp phủ */
+  }
+  .welcome .text h1 {
+    font-size: 50.1px;
+    font-weight: bold;
+  }
+  .welcome .text p {
+    font-size: 29.4px;
+    margin-top: 16px;
+    font-weight: normal;
+  }
+  .welcome .text button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 194px;
+    height: 44px;
+    font-size: 19.8px;
+    margin-top: 16px;
+  }
+  .welcome .text button:hover {
+    background-color: #2250d9;
+  }
+  .container {
+    height: 592px;
+  }
+  .container h2 {
+    margin-top: 64px;
+    margin-bottom: 48px;
+    text-align: center;
+  }
+  .container .content {
+    display: flex;
+    justify-content: space-evenly;
+    height: 380px;
+    gap: 32px;
+  }
+  .container .content .content-box {
+    width: 395px;
+    height: 380px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 2px 5px 3px 3px rgb(233, 233, 233);
+  }
+  .container .content-box img {
+    height: 192px;
+    margin-bottom: 23.5px;
+  }
+  .container .content-box div {
+    margin-left: 24px;
+  }
+  .content-box div h3 {
+    font-size: 23.9px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .content-box div p {
+    font-size: 18.6px;
+    font-weight: normal;
+    margin-bottom: 13px;
+    color: #4b5563;
+  }
+  .container .content-box button {
+    width: 109px;
+    height: 40px;
+    border-style: none;
+    border-radius: 4px;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-size: 18.6px;
+  }
+  .container .content-box button:hover {
+    cursor: pointer;
+    background-color: #2250d9;
+  }
+  .footer {
+    background-color: #1f2937;
+    height: 325px;
+    color: white;
+    padding-top: 48px;
+    padding-left: 72.5px;
+    padding-right: 72.5px;
+  }
+  .footer .footer-container {
+    width: auto;
+    gap: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 32px;
+  }
+  .footer .footer-container .grid {
+    height: 140px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer-container .grid h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  .footer-container .grid p,
+  a {
+    margin-right: 20px;
+    font-size: 18.6px;
+    color: #9ca3af;
+    text-decoration: none;
+  }
+  .footer .copyright {
+    border-top: 1px solid #374151;
+    text-align: center;
+    padding-top: 33px;
+    color: #9ca3af;
+    font-size: 18.6px;
+  }
+  
+  @media screen and (max-width: 834px) {
+    .nav {
+      padding: 25.5px;
+    }
+    .welcome {
+      height: 429px;
+    }
+    .container {
+      height: 616px;
+    }
+    .container .content {
+      height: 404px;
+    }
+    .container .content .content-box {
+      width: 224px;
+      height: 404px;
+    }
+    .content .content-box img {
+      width: 224px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    .footer {
+      height: 397px;
+    }
+    .footer .footer-container .grid {
+      height: 212px;
+    }
+  }
+  
+  @media screen and (max-width: 375px) {
+    .nav {
+      padding: 12px;
+      padding: 80px;
+    }
+    .welcome {
+      height: 196px;
+    }
+    .container {
+      height: 1428px;
+    }
+    .container .content {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      padding: 16px;
+    }
+    .container .content .content-box{
+      width: 343px;
+      height: 380px;
+    }
+    .content .content-box img{
+      width: 343px;
+      height: 192px;
+    }
+    .content .content-box p{
+      width: 295px;
+      height: 48px;
+      padding-right: 35.75px;
+    }
+    .footer {
+      height: 597px;
+      padding: 0px;
+      padding-top: 48px;
+    }
+    .footer .footer-container .grid {
+      height: 338px;
+      flex-wrap: wrap;
+      width: 343px;
+    }
+    .footer-container .grid p{
+      margin-bottom: 30px;
+    }
+    .footer .copyright{
+      width: 343px;
+      height: 81px;
+      margin-top: 100px;
+    }
+  }

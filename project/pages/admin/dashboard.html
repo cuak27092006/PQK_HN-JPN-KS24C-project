@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./../../assets/css/admin.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.min.css"rel="stylesheet"/> 
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="../../assets/css/dashboard.css">
+  </head> 
+  <body>
+    <div class="box-nav"> 
+        <div class="nav">
+            <a class="logo" href="../../pages/auth/home .html">ADMIN DASHBOARD</a>
+            <div class="nav-content">
+                <div class="title">
+                    <a href="../../pages/admin/dashboard.html">Quản lý lịch</a>
+                </div>
+                <div class="title">
+                    <a href="../../pages/admin/services.html">Quản lý dịch vụ</a>
+                </div>
+                <div class="title">
+                    <a href="../../pages/auth/home .html">Trang chủ</a>
+                </div>
+                <div class="title" id="logout">
+                    <a href="../../pages/auth/login.html">Đăng xuất</a>
+                </div>
+            </div>
+        </div>
+    <div class="content">
+            <h3>Thống kê lịch tập</h3>
+            <div class="lish">
+                <div class="faction">
+                    <p>
+                        Tổng số lịch Gym
+                    </p>
+                    <p id="gym-value">0</p>
+                </div>
+                <div class="faction">
+                    <p>
+                        Tổng số lịch Yoga
+                    </p>
+                    <p id="yoga-value">0</p>
+                </div>
+                <div class="faction">
+                    <p>
+                        Tổng số lịch Zumba
+                    </p>
+                    <p id="zumba-value">0</p>
+                </div>
+            </div>
+            <div class="table">
+                <div class="table-lish">
+                    <h5><button id="color"></button> Số lượng đặt lịch</h5>
+                </div>
+                <canvas id="myChart" width="400" height="230"></canvas>
+            </div>
+            <div class="filter">
+                <h4>Bộ lọc</h4>
+                <div class="box-min">
+                    <div>
+                        <p>Lớp học</p>
+                        <select id="filter-data" class="filter-data">
+                            <option value="all">Tất cả</option>
+                            <option value="gym">Gym</option>
+                            <option value="yoga">Yoga</option>
+                            <option value="zumba">Zumba</option>
+                        </select>
+                    </div>
+                    <div>
+                        <p id="search-email">Email</p>
+                        <input type="text" id="search-email">
+                    </div>
+                    <div>
+                        <p id="search-time">Ngày</p>
+                        <input type="date" id="search-time">
+                    </div>
+                </div>
+            </div>
+            <div class="sub-table">
+                <table id="sub-table-data" class="sub-table-data">
+                    <thead>
+                        <tr>
+                            <th>Lớp học</th>
+                            <th>Ngày tập</th>
+                            <th>Khung giờ</th>
+                            <th>Họ tên</th>
+                            <th>Email</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                    </tbody>
+                </table>
+        </div>
+    </div>
+    <div class="modal animate__animated animate__fadeInDown" id="edit-modal">
+        <div class="modal-content">
+            <h2>Sửa lịch tập</h2>
+            <label for="edit-class">Lớp học</label>
+            <select id="edit-class">
+                <option value="Gym">Gym</option>
+                <option value="Yoga">Yoga</option>
+                <option value="Zumba">Zumba</option>
+            </select>
+            <div class="error" id="class-error">Bạn chưa nhập ngày tháng năm. Vui lòng nhập lại.</div>
+            <label for="edit-date">Ngày tập</label>
+            <input type="date" id="edit-date">
+            <div class="error" id="date-error">Bạn chưa nhập ngày tháng năm. Vui lòng nhập lại.</div>
+            <label for="edit-time">Khung giờ</label>
+            <select id="edit-time">
+                <option value="07:00-08:00">07:00-08:00</option>
+                <option value="08:00-09:00">08:00-09:00</option>
+                <option value="09:00-10:00">09:00-10:00</option>
+            </select>
+            <div class="error" id="time-error">Bạn chưa nhập ngày tháng năm. Vui lòng nhập lại.</div>
+            <label for="edit-fullname">Họ tên</label>
+            <input type="text" id="edit-fullname">
+            <div class="error" id="fullname-error">Bạn chưa nhập họ và tên. Vui lòng nhập lại.</div>
+            <label for="edit-email">Email</label>
+            <input type="email" id="edit-email">
+            <div class="error" id="email-error">Email đang bị trống. Vui lòng nhập lại.</div>
+            <div class="buttons">
+                <button class="cancel-btn" id="cancel-btn">Hủy</button>
+                <button class="save-btn" id="save-btn">Lưu</button>
+            </div>
+        </div>
+    </div>
+    <script src="../../assets/js/dashboatd.js"></script>
+</body>
+</html>

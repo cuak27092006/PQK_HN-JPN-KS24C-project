@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng nhập</title>
+    <link href="../../assets/css/login.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <h2>Đăng nhập</h2>
+      <form>
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email address"
+        />
+        <div class="error" id="email-error"></div>
+        <label for="password">Mật khẩu:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+        />
+        <div class="error" id="password-error"></div>
+        <button id="loginBtn">Đăng nhập</button>
+      </form>
+      <p>
+        Chưa có tài khoản?
+        <a href="http://127.0.0.1:5500/pages/auth/register.html"> Đăng ký ngay </a>
+      </p>
+    </div>
+    <script src="../../assets/js/login.js"></script>
+</body>
+
+</html>

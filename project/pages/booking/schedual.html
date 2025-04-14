@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../assets/css/booking.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.min.css"rel="stylesheet"/>
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="navbar">
+      <h1>GYM MANAGEMENT</h1>
+      <div>
+        <a href="http://127.0.0.1:5500/pages/auth/home%20.html">Trang chủ</a>
+        <a href="http://127.0.0.1:5500/pages/auth/login.html" >Đăng xuất</a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="header">
+        <h1>Quản lý Lịch tập</h1>
+        <button class="add-btn">Đặt lịch mới</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Lớp học</th>
+            <th>Ngày tập</th>
+            <th>Khung giờ</th>
+            <th>Họ tên</th>
+            <th>Email</th>
+            <th>Thao tác</th>
+          </tr>
+        </thead>
+        <tbody id="schedule-table-body"></tbody>
+      </table>
+    </div>
+    <!--Adding/Editing-->
+    <div
+      class="modal animate__animated animate__fadeInDown"
+      id="add-schedule-modal"
+    >
+      <div class="modal-content">
+        <h2 id="modal-title">Đặt lịch mới</h2>
+        <form id="add-schedule-form">
+          <!-- lớp-->
+          <label for="class-type">Lớp học</label>
+          <select id="class-type" name="class-type">
+            <option value="Gym">Gym</option>
+            <option value="Yoga">Yoga</option>
+            <option value="Zumba">Zumba</option>
+          </select>
+          <!-- ngày-->
+          <label for="date">Ngày tập</label>
+          <input type="date" id="date" name="date" />
+          <label for="time">Khung giờ</label>
+          <select id="time" name="time">
+            <option value="07:00-09:00">07:00-09:00</option>
+            <option value="13:00-15:00">13:00-15:00</option>
+            <option value="17:00-18:00">17:00-18:00</option>
+          </select>
+          <!-- họ tên-->
+          <p id="error-date" style="color: red"></p>
+          <label for="full-name">Họ tên</label>
+          <input type="text" id="full-name" name="full-name" />
+          <p id="error-name" style="color: red"></p>
+          <!-- email-->
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" />
+          <p id="error-email" style="color: red"></p>
+          <div class="modal-buttons">
+            <button type="button" id="cancel-btn" class="cancel-btn">
+              Hủy
+            </button>
+            <button type="submit" class="save-btn">Lưu</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="footer">
+      <p>© 2025 Gym Management. All rights reserved.</p>
+    </div>
+    <script src="../../assets/js/booking.js"></script>
+  </body>
+</html>

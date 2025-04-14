@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.min.css"  rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="../../assets/css/register.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <a class="logo" href="../../pages/auth/home .html">ADMIN DASHBOARD</a>
+        <div class="content">
+          <div><a href="../../pages/admin/dashboard.html">Quản lý lịch </a></div>
+          <div><a href="../../pages/admin/services.html">Quản lý dịch vụ</a></div>
+          <div><a href="../../pages/auth/home .html">Trang chủ</a></div>
+          <div>
+            <a href="../auth/login.html" class="logout" style="color: tomato"
+              >Đăng xuất</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="header">
+          <h1>Quản lý Dịch vụ</h1>
+          <button class="add-btn">Thêm dịch vụ mới</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Tên dịch vụ</th>
+              <th>Mô tả</th>
+              <th>Hình ảnh</th>
+              <th>Thao tác</th>
+            </tr>
+          </thead>
+          <tbody id="service-table-body">
+            <tr id="Show-service"></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="modal animate__animated animate__fadeInDown" id="add-service-modal">
+      <div class="modal-content">
+        <h2 id="modal-title">Thêm dịch vụ mới</h2>
+        <form id="add-service-form">
+          <label for="service-name">Tên dịch vụ</label>
+          <input type="text" id="service-name" name="service-name" />
+          <p id="error-name" style="color: red"></p>
+          <label for="service-description">Mô tả</label>
+          <textarea
+            id="service-description"
+            name="service-description"
+          ></textarea>
+          <p id="error-description" style="color: red"></p>
+          <label for="service-image">URL Hình ảnh</label>
+          <input
+            type="url"
+            id="service-image"
+            name="service-image"
+            placeholder="Nhập URL hình ảnh"
+          />
+          <p id="error-image" style="color: red"></p>
+          <div class="modal-buttons">
+            <button type="button" id="cancel-btn" class="cancel-btn">
+              Hủy
+            </button>
+            <button type="submit" class="save-btn">Lưu</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="../../assets/js/services.js"></script>
+  </body>
+</html>
